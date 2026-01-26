@@ -14,3 +14,5 @@ kubectl et pods -> to get list of pods
 Kubectl config get-contexts
 kubectl config current-context
 kubectl config use-context docker-desktop
+
+
