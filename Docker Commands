@@ -1,0 +1,16 @@
+
+To build client docker file – 
+docker build -f ./client/Dockerfile -t vikramhemchandar/ytgratitudeapp:clientv1.0 .
+
+To build client api-gateway file – 
+docker build -f .\services\api-gateway\Dockerfile -t vikramhemchandar/ytgratitudeapp:api-gatewayv1.0 .
+
+To push to docker hub – 
+docker push vikramhemchandar/ytgratitudeapp:clientv1.0
+
+
+kubectl get ns -> to get name space
+kubectl et pods -> to get list of pods
+Kubectl config get-contexts
+kubectl config current-context
+kubectl config use-context docker-desktop
