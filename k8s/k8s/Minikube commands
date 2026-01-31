@@ -1,0 +1,7 @@
+kubectl get services hello-minikube
+
+alias kubectl="minikube kubectl --"
+
+minikube service hello-minikube
+
+kubectl port-forward service/hello-minikube 7080:8080

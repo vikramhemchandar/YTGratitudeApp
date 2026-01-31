@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-main-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: server-main
+  template:
+    metadata:
+      labels:
+        component: server-main
+    spec:
+      containers:
+        - name: server-main
+          image: vikramhemchandar/ytgratitudeapp/server-mainv1.0
+          ports:
+            - containerPort: 5001
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moods-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: moods-api
+    template:
+      metadata:
+        labels:
+          component: moods-api
+      spec:
+        containers:
+          - name: moods-api
+            images: vikramhemchandar/ytgratitudeapp/moods-apiv1.0
+            port:
+              - containerPort: 5002
+            env: 
+              - name: MOODS_SERVICE_ADDR
+                values: "moods-service-cluster-ip-service:50052"
+            resources:
+              requests:
+                cpu: "200m"
+                memory: "256Mi"
+              limits:
+                cpu: "500m"
+                memory: "512Mi"

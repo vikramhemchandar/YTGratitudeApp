@@ -12,15 +12,15 @@ docker hub:
 client - done
 api-gateway - done
 entries-service - done
-files-service - 
-moods-api - 
-moods-service - 
-server-main - 
-stats-api - 
-stats-service - 
+files-service - done
+moods-api - done
+moods-service - done
+server-main - done
+stats-api - done
+stats-service - done
 
 kubectl get ns -> to get name space
-kubectl et pods -> to get list of pods
+kubectl get pods -> to get list of pods
 Kubectl config get-contexts
 kubectl config current-context
 kubectl config use-context docker-desktop
