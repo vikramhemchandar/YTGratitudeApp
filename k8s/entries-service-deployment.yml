@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: entries-service
-          image: vikramhemchandar/ytgratitudeapp/entries-servicev1.0
+          image: vikramhemchandar/ytgratitudeapp:entries-servicev1.0
           port:
             - containerPort: 50051
           resources:

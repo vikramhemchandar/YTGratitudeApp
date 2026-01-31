@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moods-service
-          image: vikramhemchandar/ytgratitudeapp/moods-servicev1.0
+          image: vikramhemchandar/ytgratitudeapp:moods-servicev1.0
           ports:
             - containerPort: 50052
           resources:

@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: vikramhemchandar/ytgratitudeapp/clientv1.0
+          image: vikramhemchandar/ytgratitudeapp:clientv1.0
           ports:
             - containerPort: 80

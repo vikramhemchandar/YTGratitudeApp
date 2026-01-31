@@ -14,7 +14,7 @@ spec:
       spec:
         containers:
           - name: stats-service
-            image: vikramhemchandar/ytgratitudeapp/stats-servicev1.0
+            image: vikramhemchandar/ytgratitudeapp:stats-servicev1.0
             port:
               - containerPort: 50053
             env: 

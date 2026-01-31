@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: vikramhemchandar/ytgratitudeapp/api-gatewayv1.0
+          image: vikramhemchandar/ytgratitudeapp:api-gatewayv1.0
           ports:
             - containerPort: 5000
           env: 

@@ -14,7 +14,7 @@ spec:
       spec:
         containers:
           - name: moods-api
-            images: vikramhemchandar/ytgratitudeapp/moods-apiv1.0
+            images: vikramhemchandar/ytgratitudeapp:moods-apiv1.0
             port:
               - containerPort: 5002
             env: 

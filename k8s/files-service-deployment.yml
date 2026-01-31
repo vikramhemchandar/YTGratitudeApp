@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: files-service
-          image: vikramhemchandar/ytgratitudeapp/files-servicev1.0
+          image: vikramhemchandar/ytgratitudeapp:files-servicev1.0
           ports:
           - containerPort: 5004
           env:
