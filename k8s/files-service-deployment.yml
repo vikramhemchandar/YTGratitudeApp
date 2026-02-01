@@ -6,7 +6,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-    component: files-service
+      component: files-service
   template:
     metadata:
       labels:
@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: files-service
-          image: vikramhemchandar/ytgratitudeapp:files-servicev1.0
+          image: prashantdey/completeprojectb14:filesservicev1.0
           ports:
           - containerPort: 5004
           env:
             - name: PORT
-              values: 5004
+              value: "5004"
             - name: AWS_REGION
-              values: "us-east-1"
+              value: "us-east-1"
           resources:
             requests:
               cpu: "200m"

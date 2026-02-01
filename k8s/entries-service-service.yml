@@ -1,11 +1,11 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: entries-service-service
 spec:
   type: ClusterIP
   selector:
     component: entries-service
-  port:
+  ports:
     - port: 50051
       targetPort: 50051

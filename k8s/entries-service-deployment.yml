@@ -7,15 +7,15 @@ spec:
   selector: 
     matchLabels:
       component: entries-service
-    template:
-      metadata:
-        labels:
-          component: entries-service
+  template:
+    metadata:
+      labels:
+        component: entries-service
     spec:
       containers:
         - name: entries-service
-          image: vikramhemchandar/ytgratitudeapp:entries-servicev1.0
-          port:
+          image: prashantdey/completeprojectb14:entriesservicev1.0
+          ports:
             - containerPort: 50051
           resources:
             requests:

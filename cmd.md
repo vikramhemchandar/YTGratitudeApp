@@ -25,4 +25,13 @@ Kubectl config get-contexts
 kubectl config current-context
 kubectl config use-context docker-desktop
 
-
+Prashant Docker Repository -
+------------------------------------------------------
+prashantdey/completeprojectb14:apigatewayv1.0
+prashantdey/completeprojectb14:entriesservicev1.0
+prashantdey/completeprojectb14:filesservicev1.0
+prashantdey/completeprojectb14:moodsapiv1.0
+prashantdey/completeprojectb14:moodsservicev1.0
+prashantdey/completeprojectb14:servermainv1.0
+prashantdey/completeprojectb14:statsapiv1.0
+prashantdey/completeprojectb14:statsservicev1.0

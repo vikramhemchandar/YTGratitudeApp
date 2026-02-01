@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: client-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     component: web
   ports:

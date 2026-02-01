@@ -7,25 +7,25 @@ spec:
   selector:
     matchLabels:
       component: stats-service
-    template:
-      metadata:
-        labels:
-          component: stats-service
-      spec:
-        containers:
-          - name: stats-service
-            image: vikramhemchandar/ytgratitudeapp:stats-servicev1.0
-            port:
-              - containerPort: 50053
-            env: 
-              - name: HOST
-                values: "0.0.0.0"
-              - name: PORT
-                values: "50053"
-            resources:
-              requests:
-                cpu: "200m"
-                memory: "256Mi"
-              limits:
-                cpu: "500m"
-                memory: "512Mi"
+  template:
+    metadata:
+      labels:
+        component: stats-service
+    spec:
+      containers:
+        - name: stats-service
+          image: prashantdey/completeprojectb14:statsservicev1.0
+          ports:
+            - containerPort: 50053
+          env: 
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "50053"
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

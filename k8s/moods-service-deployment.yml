@@ -6,7 +6,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-    component: moods-service
+     component: moods-service
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moods-service
-          image: vikramhemchandar/ytgratitudeapp:moods-servicev1.0
+          image: prashantdey/completeprojectb14:moodsservicev1.0
           ports:
             - containerPort: 50052
           resources:
