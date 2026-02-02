@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moods-api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: moods-api
+  template:
+    metadata:
+      labels:
+        component: moods-api
+    spec:
+      containers:
+        - name: moods-api
+          image: prashantdey/completeprojectb14:moodsapiv1.0
+          ports:
+            - containerPort: 5002
+          envFrom:
+            - configMapRef:
+                name: configmap
+            - secretRef:
+                name: config-secrets
+          env:
+            - name: MOODS_SERVICE_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: MOODS_SERVICE_ADDR
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: MOODS_PORT
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5002
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5002
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

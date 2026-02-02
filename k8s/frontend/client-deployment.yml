@@ -17,3 +17,12 @@ spec:
           image: prashantdey/completeprojectb14:clientv1.0
           ports:
             - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: configmap
+          env:
+            - name: CLIENT_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: CLIENT_PORT

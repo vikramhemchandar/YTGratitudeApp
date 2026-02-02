@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: entries-service-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      component: entries-service
+  template:
+    metadata:
+      labels:
+        component: entries-service
+    spec:
+      containers:
+        - name: entries-service
+          image: prashantdey/completeprojectb14:entriesservicev1.0
+          ports:
+            - containerPort: 50051
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          # Load environment from the global ConfigMap and sensitive values from the Secret
+          envFrom:
+            - configMapRef:
+                name: configmap
+            - secretRef:
+                name: config-secrets
+          # Explicit example env mappings (optional overrides)
+          env:
+            - name: HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: HOST
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: ENTRIES_PORT

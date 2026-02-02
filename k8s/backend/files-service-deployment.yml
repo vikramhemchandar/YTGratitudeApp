@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: files-service-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: files-service
+  template:
+    metadata:
+      labels:
+        component: files-service
+    spec:
+      containers:
+        - name: files-service
+          image: prashantdey/completeprojectb14:filesservicev1.0
+          ports:
+          - containerPort: 5004
+          envFrom:
+            - configMapRef:
+                name: configmap
+            - secretRef:
+                name: config-secrets
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: FILES_SERVICE_PORT
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: AWS_REGION
+            - name: S3_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: S3_BUCKET
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5004
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5004
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          
+
+  
