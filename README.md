@@ -6,13 +6,13 @@ This repo is a small microservice-based Gratitude & Mood journal. A React client
 ## Architecture
 High-level flow (default ports shown):
 
-Client (React, :3000)
-  -> /api/journal/*  -> api-gateway (:5000) -> gRPC entries-service (:50051) -> Postgres (entries)
-  -> /api/ai/*       -> api-gateway (:5000) -> OpenAI API
-  -> /api/moods/*    -> moods-api (:5002)   -> gRPC moods-service (:50052) -> Postgres (moods)
-  -> /api/stats/*    -> stats-api (:5003)   -> gRPC stats-service (:50053) -> Postgres (entries, moods)
-  -> /api/files/*    -> files-service (:5004) -> S3
-  -> /api/server/*   -> server-main (:5001) -> Postgres (values, entries) [legacy]
+Client (React, :3000) <br>
+  -> /api/journal/*  -> api-gateway (:5000) -> gRPC entries-service (:50051) -> Postgres (entries) <br>
+  -> /api/ai/*       -> api-gateway (:5000) -> OpenAI API <br>
+  -> /api/moods/*    -> moods-api (:5002)   -> gRPC moods-service (:50052) -> Postgres (moods) <br>
+  -> /api/stats/*    -> stats-api (:5003)   -> gRPC stats-service (:50053) -> Postgres (entries, moods) <br>
+  -> /api/files/*    -> files-service (:5004) -> S3 <br>
+  -> /api/server/*   -> server-main (:5001) -> Postgres (values, entries) [legacy] <br>
 
 gRPC contracts live in `protos/*.proto`. Each gRPC service currently loads proto files from a local `protos/` folder inside its service directory, so copy or symlink the files from `/protos` before running (see setup below).
 
