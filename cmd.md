@@ -1,6 +1,6 @@
 ## List of Docker and Kubernetes commands used for this project
 
-##### Prashant Docker Repository -
+##### Docker Images in Docker Hub
 ```
 Frontend:
 prashantdey/completeprojectb14:clientv1.0
@@ -74,7 +74,7 @@ To push to docker hub –
 ##### List Objects
 `kubectl config get-contexts` to get the list of kubernetes clusters <br> 
 `kubectl config current-context` to get the current cluster <br>
-`kubectl config use-context docker-desktop` <br> to use another cluster
+`kubectl config use-context docker-desktop` to use another cluster <br>
 `kubectl get ns` : to get name space <br>
 `kubectl get pods` : to get list of pods <br>
 `kubectl get deployments` : to get list of deployments <br>
@@ -93,6 +93,6 @@ To push to docker hub –
 `kubectl delete configmap <configmap-object-name>` to delete ConfigMap object <br>
 `kubectl delete secrets <configmap-object-name>` to delete Secrets object <br>
 
-#### Create deployment file on terminal
+#### Create object files on Terminals
 `kubectl create deployment nginx --image=nginx --dry-run=client -o yaml` to create a Deployment file <br>
 `kubectl create service nginx --image=nginx --dry-run=client -o yaml` to create a Service file <br>
