@@ -1,4 +1,6 @@
-#### Prashant Docker Repository -
+## List of Docker and Kubernetes commands used for this project
+
+##### Prashant Docker Repository -
 ```
 Frontend:
 prashantdey/completeprojectb14:clientv1.0
