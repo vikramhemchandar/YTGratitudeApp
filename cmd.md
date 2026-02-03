@@ -26,7 +26,7 @@ To push to docker hub –
 
 #### Microservices details 
 ##### Frontend:
-- client
+- client <br>
 ##### Backend
 - api-gateway
 - entries-service
