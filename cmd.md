@@ -35,10 +35,10 @@ stats-service - done
 
 **KUBECTL Commands**
 
-`kubectl get ns` -> to get name space
-`kubectl get pods` -> to get list of pods
-`Kubectl config get-contexts`-> to get the list of kubernetes clusters
-`kubectl config current-context` -> to get the current cluster
-`kubectl config use-context docker-desktop`
+`kubectl get ns` -> to get name space <br>
+`kubectl get pods` -> to get list of pods <br>
+`Kubectl config get-contexts`-> to get the list of kubernetes clusters <br>
+`kubectl config current-context` -> to get the current cluster <br>
+`kubectl config use-context docker-desktop` <br>
 
-`kubectl apply -f k8s/env/config-secrets.yml` to create a pod
+`kubectl apply -f k8s/env/config-secrets.yml` to create a pod <br>
