@@ -25,10 +25,9 @@ To push to docker hub –
 >docker push vikramhemchandar/ytgratitudeapp:clientv1.0
 
 #### Microservices details 
-**Frontend:**
+##### Frontend:
 - client
-
-**Backend**
+##### Backend
 - api-gateway
 - entries-service
 - files-service 
@@ -40,8 +39,9 @@ To push to docker hub –
 
 #### KUBECTL Commands
 
-**List Objects** <br>
-`Kubectl config get-contexts` : to get the list of kubernetes clusters <br>
+##### List Objects
+To get the list of kubernetes clusters 
+>kubectl config get-contexts
 `kubectl config current-context` : to get the current cluster <br>
 `kubectl config use-context docker-desktop` <br>
 `kubectl get ns` : to get name space <br>
@@ -53,7 +53,7 @@ To push to docker hub –
 `kubectl get pv` : to get list of database persistant volume <br>
 `kubectl get pvc` : to get list of database persistant volume claim <br>
 
-**Create Objects** <br>
+##### Create Objects
 `kubectl apply -f k8s/env/config-secrets.yml` to create a Secret object<br>
 `kubectl apply -f k8s/env/configmap.yml` to create a ConfigMap object <br>
 `kubectl apply -f k8s/database/database-pv.yml` to create Database Persistant Volume <br>
