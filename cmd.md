@@ -42,9 +42,10 @@ To push to docker hub –
 ##### List Objects
 To get the list of kubernetes clusters 
 >kubectl config get-contexts
+
 To get the current cluster
 >kubectl config current-context
-<br> 
+
 `kubectl config use-context docker-desktop` <br>
 `kubectl get ns` : to get name space <br>
 `kubectl get pods` : to get list of pods <br>
