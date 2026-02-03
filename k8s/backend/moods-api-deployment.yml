@@ -32,19 +32,23 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: configmap
-                  key: MOODS_PORT
+                  key: MOODS_API_PORT
           livenessProbe:
             httpGet:
               path: /healthz
               port: 5002
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /healthz
               port: 5002
-            initialDelaySeconds: 5
+            initialDelaySeconds: 15
             periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 2
           resources:
             requests:
               cpu: "200m"

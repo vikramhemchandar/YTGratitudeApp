@@ -33,18 +33,27 @@ spec:
                 configMapKeyRef:
                   name: configmap
                   key: OPENAI_MODEL
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: API_GATEWAY_PORT
           livenessProbe:
             httpGet:
               path: /healthz
               port: 5000
-            initialDelaySeconds: 15
+            initialDelaySeconds: 30
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
           readinessProbe:
             httpGet:
               path: /healthz
               port: 5000
-            initialDelaySeconds: 5
+            initialDelaySeconds: 15
             periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 2
           resources:
             requests:
               cpu: "200m"
