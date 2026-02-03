@@ -37,7 +37,7 @@ To push to docker hub –
 - stats-api
 - stats-service
 
-#### Kubernetes Commands
+### Kubernetes Commands
 
 ##### AWS Kubernetes Cluster
 `eksctl create cluster --name vikramhemchandar-eks-cluster --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 3 --nodes-min 2 --nodes-max 4` to create a cluster on AWS for ap-south-1 Region, with 3 nodes<br>
