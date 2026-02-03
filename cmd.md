@@ -37,16 +37,44 @@ To push to docker hub –
 - stats-api
 - stats-service
 
-#### KUBECTL Commands
+#### Kubernetes Commands
+
+##### AWS Kubernetes Cluster
+`eksctl create cluster --name vikramhemchandar-eks-cluster --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 3 --nodes-min 2 --nodes-max 4` to create a cluster on AWS for ap-south-1 Region, with 3 nodes<br>
+`aws eks --region ap-south-1 update-kubeconfig --name vikramhemchandar-eks-cluster` to add a new context <br>
+`kubectl config get-contexts` to get the list of Kubernetes clusters <br>
+`kubectl config current-context` to get the current Kubernetes cluster <br>
+
+##### Create Objects
+`kubectl apply -f k8s/env/config-secrets.yml` to create a Secret object<br>
+`kubectl apply -f k8s/env/configmap.yml` to create a ConfigMap object <br>
+`kubectl apply -f k8s/database/database-pv.yml` to create Database Persistant Volume <br>
+`kubectl apply -f k8s/database/database-persistant-vlc.yml` to create Database Persistant Volume claim <br>
+`kubectl apply -f k8s/database/database-deployment.yml` to create Deployment object for Database<br>
+`kubectl apply -f k8s/database/database-service.yml` to create Service object for Database<br>
+`kubectl apply -f k8s/frontend/client-deployment.yml` to create Deployment object for Client microservice<br>
+`kubectl apply -f k8s/frontend/client-service.yml` to create Service object for Client microservice<br>
+`kubectl apply -f k8s/backend/api-gateway-deployment.yml` to create Deployment object for api-gateway microservice<br>
+`kubectl apply -f k8s/backend/api-gateway-service.yml` to create Service object for api-gateway microservice<br>
+`kubectl apply -f k8s/backend/entries-service-deployment.yml` to create Deployment object for entries-service microservice<br>
+`kubectl apply -f k8s/backend/entries-service-service.yml` to create Service object for entries-service microserviceservice<br>
+`kubectl apply -f k8s/backend/files-service-deployment.yml` to create Deployment object for files-service microservice<br>
+`kubectl apply -f k8s/backend/files-service-service.yml` to create Service object for files-service microserviceservice<br>
+`kubectl apply -f k8s/backend/moods-api-deployment.yml` to create Deployment object for moods-api microservice<br>
+`kubectl apply -f k8s/backend/moods-api-service.yml` to create Service object for moods-api microserviceservice<br>
+`kubectl apply -f k8s/backend/moods-service-deployment.yml` to create Deployment object for moods-service microservice<br>
+`kubectl apply -f k8s/backend/moods-serivce-service.yml` to create Service object for moods-service microserviceservice<br>
+`kubectl apply -f k8s/backend/server-main-deployment.yml` to create Deployment object for server-main microservice<br>
+`kubectl apply -f k8s/backend/server-main-service.yml` to create Service object for server-main microserviceservice<br>
+`kubectl apply -f k8s/backend/stats-api-deployment.yml` to create Deployment object for stats-api microservice<br>
+`kubectl apply -f k8s/backend/stats-api-service.yml` to create Service object for stats-api microserviceservice<br>
+`kubectl apply -f k8s/backend/stats-service-deployment.yml` to create Deployment object for stats-service microservice<br>
+`kubectl apply -f k8s/backend/stats-service-service.yml` to create Service object for stats-service microserviceservice<br>
 
 ##### List Objects
-To get the list of kubernetes clusters 
->kubectl config get-contexts
-
-To get the current cluster
->kubectl config current-context
-
-`kubectl config use-context docker-desktop` <br>
+`kubectl config get-contexts` to get the list of kubernetes clusters <br> 
+`kubectl config current-context` to get the current cluster <br>
+`kubectl config use-context docker-desktop` <br> to use another cluster
 `kubectl get ns` : to get name space <br>
 `kubectl get pods` : to get list of pods <br>
 `kubectl get deployments` : to get list of deployments <br>
@@ -56,14 +84,15 @@ To get the current cluster
 `kubectl get pv` : to get list of database persistant volume <br>
 `kubectl get pvc` : to get list of database persistant volume claim <br>
 
-##### Create Objects
-`kubectl apply -f k8s/env/config-secrets.yml` to create a Secret object<br>
-`kubectl apply -f k8s/env/configmap.yml` to create a ConfigMap object <br>
-`kubectl apply -f k8s/database/database-pv.yml` to create Database Persistant Volume <br>
-`kubectl apply -f k8s/database/database-persistant-vlc.yml` to create Database Persistant Volume claim <br>
-`kubectl apply -f k8s/database/database-deployment.yml` to create Deployment object for Database<br>
-`kubectl apply -f k8s/database/database-service.yml` to create Service object for Database<br>
-`kubectl apply -f k8s/frontend/client-deployment.yml` to create deployment object for Client service<br>
-`kubectl apply -f k8s/frontend/client-service.yml` to create service object for Client service<br>
-`kubectl apply -f k8s/backend/api-gateway-deployment.yml` to create deployment object for api-gateway service<br>
-`kubectl apply -f k8s/backend/api-gateway-service.yml` to create service object for api-gateway service<br>
+#### Delete Objects
+`kubectl delete pod <pod-name>` to delete pod <br>
+`kubectl delete deployment <deployment-object-name>` to delete Ddeployment object <br>
+`kubectl delete service <service-object-name>` to delete Service object <br>
+`kubectl delete pvc <pvc-object-name>` to delete Database Persistant Volume object <br>
+`kubectl delete pv <pv-object-name>` to delete Database Persistant Volume Claim object <br>
+`kubectl delete configmap <configmap-object-name>` to delete ConfigMap object <br>
+`kubectl delete secrets <configmap-object-name>` to delete Secrets object <br>
+
+#### Create deployment file on terminal
+`kubectl create deployment nginx --image=nginx --dry-run=client -o yaml` to create a Deployment file <br>
+`kubectl create service nginx --image=nginx --dry-run=client -o yaml` to create a Service file <br>
