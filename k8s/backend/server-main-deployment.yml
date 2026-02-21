@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server-main
-          image: prashantdey/completeprojectb14:servermainv1.0
+          image: vikramhemchandar/ytgratitudeapp:server-mainv1.1
           ports:
             - containerPort: 5001
           envFrom:
